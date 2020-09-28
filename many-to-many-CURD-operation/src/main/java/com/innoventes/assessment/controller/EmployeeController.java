@@ -19,7 +19,7 @@ public class EmployeeController {
 	
 	@PostMapping(value = "/create")
 	public Employee createEmployee(@RequestBody Employee employee) {
-		return employeeService.save(employee);
+		return employee != null ? employeeService.save(employee) : null;
 	}
 	
 }
